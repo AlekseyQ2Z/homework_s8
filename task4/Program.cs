@@ -26,14 +26,17 @@ void GetDifferentNumbers(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            for (int k = 0; k < arr.GetLength(1); k++)
+            for (int l = 0; l < arr.GetLength(0); l++)
             {
-                if (arr[i, j] == arr[i, k])
+                for (int k = 0; k < arr.GetLength(1); k++)
                 {
-                    if (k != j)
+                    if (arr[i, j] == arr[l, k])
                     {
-                        arr[i, j] = new Random().Next(10, 100);
-                        GetDifferentNumbers(arr);
+                        if (k != j && i != k)
+                        {
+                            arr[i, j] = new Random().Next(10, 100);
+                            GetDifferentNumbers(arr);
+                        }
                     }
                 }
             }
