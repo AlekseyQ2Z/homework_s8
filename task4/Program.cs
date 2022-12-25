@@ -32,7 +32,7 @@ void GetDifferentNumbers(int[,] arr)
                 {
                     if (arr[i, j] == arr[l, k])
                     {
-                        if (k != j && i != k)
+                        if (k != j && i != l)
                         {
                             arr[i, j] = new Random().Next(10, 100);
                             GetDifferentNumbers(arr);
